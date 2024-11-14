@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Task Manager</h1>
+        <div class="search-filter">
+            <input type="text" id="search" placeholder="Search tasks...">
+            <select id="filter" onchange="displayTasks()">
+                <option value="all">All</option>
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+        </div>
+    </header>
+    
+    <main>
+        <section class="task-input">
+            <h2>Add New Task</h2>
+            <input type="text" id="title" placeholder="Task Title">
+            <textarea id="description" placeholder="Description"></textarea>
+            <input type="date" id="dueDate">
+            <select id="priority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </section>
+
+        <section class="dashboard">
+            <h2>Dashboard</h2>
+            <div class="task-sections">
+                <div class="task-list" id="upcoming-tasks">
+                    <h3>Upcoming Tasks</h3>
+                    <ul id="upcoming-list"></ul>
+                </div>
+                <div class="task-list" id="overdue-tasks">
+                    <h3>Overdue Tasks</h3>
+                    <ul id="overdue-list"></ul>
+                </div>
+                <div class="task-list" id="completed-tasks">
+                    <h3>Completed Tasks</h3>
+                    <ul id="completed-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
